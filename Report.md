@@ -44,7 +44,7 @@ Epsilon decay for noise process | 1e-6
 
 ### Plot of Scores
 The environment is solved at **304** episodes. 
-<img src="https://github.com/epoc88/DeepReinforcementLearning_CollaborationAndCompetition/blob/master/images/results.png?raw=true" width="80%" align="top-left" alt="" title="Results" />  
+<img src="https://github.com/epoc88/DeepReinforcementLearning_CollaborationAndCompetition/blob/master/images/results.png?raw=true" width="60%" align="top-left" alt="" title="Results" />  
   
 ### Future work
 ##### Other solutions than DDPG
