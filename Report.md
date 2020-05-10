@@ -35,8 +35,8 @@ Actor learning rate | 1e-3
 Actor learning rate minimum | 1e-4 
 Critic learning rate | 1e-3 
 Critic learning rate minimum | 1e-4 
-Steps / each Learn   | 20
-Minibatches per learning step| 8 
+Steps / each Learn   | 1
+Minibatches per learning step| 16 
 OU sigma |0.2
 OU theta | 0.15
 Epsilon decay for noise process | 1e-6
