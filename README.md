@@ -37,8 +37,18 @@ The environment is considered solved, when the average (over 100 episodes) of th
 
 2. Place the file in the DRLND GitHub repository, in the `p3_collab-compet/` folder, and unzip (or decompress) the file. 
 
+### Dependencies
+Ensure the following dependencies have been installed:  
+
+- python 3.7  
+- unity-ml  
+- numpy  
+- torch  
+- matplotlib  
+
+
 ### Instructions
 
-Follow the instructions in `Tennis.ipynb` to get started with training your own agent!  
-
+Follow the instructions in `Tennis.ipynb` to get started with training the agent and check the trained result by playing in the end!  
+You may modify `ddpg_agent.py` to change the hyperparameters and `model.py` to change the neural network topology.
 
