@@ -5,10 +5,17 @@
 ### Introduction 
 DDPG stands for Deep Deterministic Policy Gradients, presented in 2015 in “Continuous Control With Deep Reinforcement Learning” (Lillicrap et al, 2015). DDPG builds on the actor-critic framework but differentiates itself by directly outputting action values instead of a probability distribution across discrete values. 
 
-For this project, two agents must collaborate in this enviornment to maximize reward. According to the [MADDPG Paper](https://arxiv.org/abs/1706.02275) we need to make additional considerations when working with multiple agents. In the case of multi agent, both agents shared a common replay buffer as indicated in the MADDPG paper. After trying both, I found that the simpler DDPG should work.
+For this project, two agents must collaborate in this enviornment to maximize reward. According to the [MADDPG Paper](https://arxiv.org/abs/1706.02275) we need to make additional considerations when working with multiple agents. In the case of multi agent, both agents shared a common replay buffer as indicated in the MADDPG paper. After reviewing both, I decided that the simpler DDPG should work, and this clue are confirmed from the knowledge base and channel discussions.
 
+The DDPG and model are reused from project 2 with minor with minor modification to the following hypermeters 
+
+- Steps / each Learn   -->  1  (Learn every 1 step)
+- Minibatches per learning step --> 16 (Learn 16 minibatches per learning step)
+
+In previous projects like Navigation, epsilon-greedy algorithm allows the agent to systematically manage the exploration vs. exploitation trade-off. However, this approach won't work for controlling the tennis agents. The reason is that the actions are no longer a discrete set of simple directions (i.e., up, down, left, right). The actions driving the movement of the arm are forces with different magnitudes and directions. This can cause the system to oscillate without making much progress.
+
+### Training
 Learning process started by initializing our four networks (critic, actor, target critic, target actor) and our replay buffer. In the training, for each episode to train, the state is initialized (to start again with a new environment), and for each time step, we select an action based on the current policy and exploration policy. We get an action from the actor network and add noise to it. Then performing the action in the environment, observe the reward, and new state of the environment (now we have s,a,r,s'). The experience (s,a,r,s') are stored in memory buffer. Depending on the training policy, we may sample a minibatch from this buffer and calculate an updated Q value. The updated Q-value is obtained by the Bellman Equation but we use the target value network to calculate the next state Q value and the target policy network to get the next action value.  
- 
  
 ### Implementation details
 #### actor network: 
