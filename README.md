@@ -49,6 +49,6 @@ Ensure the following dependencies have been installed:
 
 ### Instructions
 
-Follow the instructions in `Tennis.ipynb` to get started with training the agent and check the trained result by playing in the end!  
+Follow the instructions in `Tennis.ipynb` to get started with training the agent.  
 You may modify `ddpg_agent.py` to change the hyperparameters and `model.py` to change the neural network topology.
 
