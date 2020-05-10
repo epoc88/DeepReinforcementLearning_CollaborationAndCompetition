@@ -7,7 +7,7 @@ DDPG stands for Deep Deterministic Policy Gradients, presented in 2015 in “Con
 
 For this project, two agents must collaborate in this enviornment to maximize reward. According to the [MADDPG Paper](https://arxiv.org/abs/1706.02275) we need to make additional considerations when working with multiple agents. In the case of multi agent, both agents shared a common replay buffer as indicated in the MADDPG paper. After reviewing both, I decided that the simpler DDPG should work, and this clue are confirmed from the knowledge base and channel discussions.
 
-The DDPG and model are reused from project 2 with minor with minor modification to the following hypermeters 
+The DDPG and model are reused from project 2 with minor modification to the following hypermeters 
 
 - Steps / each Learn   -->  1  (Learn every 1 step)
 - Minibatches per learning step --> 16 (Learn 16 minibatches per learning step)
